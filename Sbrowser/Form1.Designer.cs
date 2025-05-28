@@ -66,8 +66,10 @@
             this.webView21.Location = new System.Drawing.Point(2, 28);
             this.webView21.Name = "webView21";
             this.webView21.Size = new System.Drawing.Size(991, 533);
+            this.webView21.Source = new System.Uri("https://google.com", System.UriKind.Absolute);
             this.webView21.TabIndex = 3;
             this.webView21.ZoomFactor = 1D;
+            this.webView21.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.webView21_SourceChanged);
             // 
             // Form1
             // 
@@ -78,7 +80,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.webView21);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SBrowser";
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

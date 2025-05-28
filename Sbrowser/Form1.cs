@@ -22,19 +22,8 @@ namespace Sbrowser
         public Form1()
         {
             InitializeComponent();
-            Timer timer;
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.Tick += UpdateAdress;
-            timer.Start();
-
+            
         }
-
-        private void UpdateAdress(object sender, EventArgs e)
-        {
-            textBox1.Text = Convert.ToString(webView21.Source);
-        }
-
 
 
 
@@ -66,6 +55,12 @@ namespace Sbrowser
             }
         }
 
-        
+        private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
+        {
+            if (textBox1.Text != webView21.Source.ToString())
+            {
+                textBox1.Text = webView21.Source.ToString();
+            }
+        }
     }
 }
