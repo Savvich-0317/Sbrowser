@@ -18,13 +18,35 @@ namespace Sbrowser
 
     public partial class Form1 : Form
     {
+        string PrevSource = "";
         public Form1()
         {
+            Timer timer;
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += CheckerCycle;
+            timer.Start();
             InitializeComponent();
             
         }
 
+        private void CheckerCycle(object sender, EventArgs e)
+        {
 
+
+            if (PrevSource == "" || PrevSource == webView21.Source.ToString())
+            {
+                button2.Enabled = false;
+            }
+            else {
+                button2.Enabled = true;
+            }
+        }
+
+        private void WebView21_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,8 +57,8 @@ namespace Sbrowser
 
         private void SendAdress()
         {
-            
-
+            PrevSource = webView21.Source.ToString();
+            button2.Text = PrevSource;
             try
             {
                 
@@ -86,14 +108,14 @@ namespace Sbrowser
             }
         }
 
-        private void webView21_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
+       
+        private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Visible = true;
-        }
-
-        private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
-        {
-            pictureBox1.Visible = false;
+            if (PrevSource != "")
+            {
+                textBox1.Text = PrevSource;
+                webView21.Source = new Uri(PrevSource);
+            }
         }
     }
 }
