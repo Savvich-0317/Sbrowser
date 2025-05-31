@@ -18,12 +18,13 @@ namespace Sbrowser
 
     public partial class Form1 : Form
     {
+        string CheckSource = "https://google.com";
         string PrevSource = "";
         public Form1()
         {
             Timer timer;
             timer = new Timer();
-            timer.Interval = 1000;
+            timer.Interval = 1;
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
@@ -32,7 +33,10 @@ namespace Sbrowser
 
         private void CheckerCycle(object sender, EventArgs e)
         {
-
+            
+            
+            
+            
 
             if (PrevSource == "" || PrevSource == webView21.Source.ToString())
             {
@@ -57,8 +61,7 @@ namespace Sbrowser
 
         private void SendAdress()
         {
-            PrevSource = webView21.Source.ToString();
-            button2.Text = PrevSource;
+            
             try
             {
                 
@@ -91,12 +94,11 @@ namespace Sbrowser
 
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
-            
-
-            if (textBox1.Text != webView21.Source.ToString())
+            if (CheckSource != webView21.Source.ToString())
             {
-                
-                textBox1.Text = webView21.Source.ToString();
+                PrevSource = CheckSource;
+                CheckSource = webView21.Source.ToString();
+                button2.Text = PrevSource;
             }
         }
 
@@ -116,6 +118,11 @@ namespace Sbrowser
                 textBox1.Text = PrevSource;
                 webView21.Source = new Uri(PrevSource);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            webView21.Reload();
         }
     }
 }
