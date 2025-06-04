@@ -51,9 +51,9 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(838, 2);
+            this.button1.Location = new System.Drawing.Point(833, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 21);
+            this.button1.Size = new System.Drawing.Size(92, 20);
             this.button1.TabIndex = 5;
             this.button1.Text = "Go!";
             this.button1.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.button2.Location = new System.Drawing.Point(623, 2);
+            this.button2.Location = new System.Drawing.Point(618, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 21);
+            this.button2.Size = new System.Drawing.Size(209, 20);
             this.button2.TabIndex = 7;
             this.button2.Text = "Previous adress typed";
             this.button2.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button4.Location = new System.Drawing.Point(586, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 21);
+            this.button4.Size = new System.Drawing.Size(26, 21);
             this.button4.TabIndex = 9;
             this.button4.Text = "⌂";
             this.button4.UseVisualStyleBackColor = true;

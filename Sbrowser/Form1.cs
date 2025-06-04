@@ -94,6 +94,8 @@ namespace Sbrowser
 
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
+            textBox1.Text = webView21.Source.ToString();
+
             if (CheckSource != webView21.Source.ToString())
             {
                 PrevSource = CheckSource;
