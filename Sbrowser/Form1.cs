@@ -124,5 +124,10 @@ namespace Sbrowser
         {
             webView21.Reload();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            webView21.Source = new Uri("https://google.com");
+        }
     }
 }
