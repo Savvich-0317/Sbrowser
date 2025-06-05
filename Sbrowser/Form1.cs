@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sbrowser.Properties;
 
 
 
@@ -18,7 +19,7 @@ namespace Sbrowser
 
     public partial class Form1 : Form
     {
-        string CheckSource = "https://google.com";
+        string CheckSource = Settings.Default.homepage;
         string PrevSource = "";
         public Form1()
         {
@@ -28,7 +29,8 @@ namespace Sbrowser
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
-            
+            SendAdress(Settings.Default.homepage);
+
         }
 
         private void CheckerCycle(object sender, EventArgs e)
@@ -56,35 +58,35 @@ namespace Sbrowser
         {
 
             
-            SendAdress();
+            SendAdress(textBox1.Text);
         }
 
-        private void SendAdress()
+        private void SendAdress(string uris)
         {
             
             try
             {
                 
-                webView21.Source = new Uri(textBox1.Text);
+                webView21.Source = new Uri(uris);
             }
             catch
             {
-                if (textBox1.Text.Contains("https://"))
+                if (uris.Contains("https://"))
                 {
-                    textBox1.Text = "Adress not responding, or not valid";
+                    uris = "Adress not responding, or not valid";
                 }
                 else
                 {
                     try
                     {
                         
-                        webView21.Source = new Uri("https://" + textBox1.Text);
-                        textBox1.Text = "https://" + textBox1.Text;
+                        webView21.Source = new Uri("https://" + uris);
+                        uris = "https://" + uris;
                     }
                     catch
                     {
 
-                        textBox1.Text = "Adress not responding, or not valid";
+                        uris = "Adress not responding, or not valid";
 
                     }
                 }
@@ -100,7 +102,7 @@ namespace Sbrowser
             {
                 PrevSource = CheckSource;
                 CheckSource = webView21.Source.ToString();
-                button2.Text = PrevSource;
+                
             }
         }
 
@@ -108,7 +110,7 @@ namespace Sbrowser
         {
             if (e.KeyCode == Keys.Enter) {
 
-                SendAdress();
+                SendAdress(textBox1.Text);
             }
         }
 
@@ -117,7 +119,6 @@ namespace Sbrowser
         {
             if (PrevSource != "")
             {
-                textBox1.Text = PrevSource;
                 webView21.Source = new Uri(PrevSource);
             }
         }
@@ -129,7 +130,13 @@ namespace Sbrowser
 
         private void button4_Click(object sender, EventArgs e)
         {
-            webView21.Source = new Uri("https://google.com");
+            SendAdress(Settings.Default.homepage);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form2 settings = new Form2();
+            settings.ShowDialog();
         }
     }
 }
