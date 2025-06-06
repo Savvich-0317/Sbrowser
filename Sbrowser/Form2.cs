@@ -15,7 +15,9 @@ namespace Sbrowser
     {
         public Form2()
         {
+            
             InitializeComponent();
+            comboBox1.SelectedIndex = Convert.ToInt32(Settings.Default.theme);
             textBox1.Text = Settings.Default.homepage;
         }
 
@@ -27,8 +29,14 @@ namespace Sbrowser
         private void button1_Click(object sender, EventArgs e)
         {
             Settings.Default.homepage = textBox1.Text;
+            Settings.Default.theme =Convert.ToBoolean(comboBox1.SelectedIndex);
             Settings.Default.Save();
             button1.Text = "Saved!";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

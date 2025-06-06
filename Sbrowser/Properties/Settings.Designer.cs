@@ -34,5 +34,17 @@ namespace Sbrowser.Properties {
                 this["homepage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool theme {
+            get {
+                return ((bool)(this["theme"]));
+            }
+            set {
+                this["theme"] = value;
+            }
+        }
     }
 }

@@ -30,15 +30,23 @@ namespace Sbrowser
             timer.Start();
             InitializeComponent();
             SendAdress(Settings.Default.homepage);
+            
 
         }
 
         private void CheckerCycle(object sender, EventArgs e)
         {
-            
-            
-            
-            
+            if (Settings.Default.theme == false)
+            {
+                this.BackColor = Color.FromArgb(60,60,60);
+            }
+            else
+            {
+                this.BackColor = Color.White;
+            }
+
+
+
 
             if (PrevSource == "" || PrevSource == webView21.Source.ToString())
             {
@@ -61,39 +69,7 @@ namespace Sbrowser
             SendAdress(textBox1.Text);
         }
 
-        private void SendAdress(string uris)
-        {
-            
-            try
-            {
-                
-                webView21.Source = new Uri(uris);
-            }
-            catch
-            {
-                if (uris.Contains("https://"))
-                {
-                    uris = "Adress not responding, or not valid";
-                }
-                else
-                {
-                    try
-                    {
-                        
-                        webView21.Source = new Uri("https://" + uris);
-                        uris = "https://" + uris;
-                    }
-                    catch
-                    {
-
-                        uris = "Adress not responding, or not valid";
-
-                    }
-                }
-
-            }
-        }
-
+        
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
             textBox1.Text = webView21.Source.ToString();
@@ -137,6 +113,51 @@ namespace Sbrowser
         {
             Form2 settings = new Form2();
             settings.ShowDialog();
+        }
+
+        private void SendAdress(string uris)
+        {
+
+            try
+            {
+
+                webView21.Source = new Uri(uris);
+            }
+            catch
+            {
+                if (uris.Contains("https://"))
+                {
+                    uris = "Adress not responding, or not valid";
+                }
+                else
+                {
+                    try
+                    {
+
+                        webView21.Source = new Uri("https://" + uris);
+                        uris = "https://" + uris;
+                    }
+                    catch
+                    {
+
+                        uris = "Adress not responding, or not valid";
+
+                    }
+                }
+
+            }
+        }
+
+        private void webView21_ContentLoading_1(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
+        {
+            label1.Text = "loading...";
+            label1.BackColor = Color.Yellow;
+        }
+
+        private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
+        {
+            label1.Text = "loaded!";
+            label1.BackColor = Color.Green;
         }
     }
 }
