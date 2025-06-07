@@ -38,11 +38,17 @@ namespace Sbrowser
         {
             if (Settings.Default.theme == false)
             {
-                this.BackColor = Color.FromArgb(60,60,60);
+                this.BackColor = Color.Gray;
+                webView21.BackColor = Color.Gray;
+                textBox1.BackColor = Color.Gray;
+                
             }
             else
             {
-                this.BackColor = Color.White;
+                this.BackColor = Color.AntiqueWhite;
+                webView21.BackColor = Color.AntiqueWhite;
+                textBox1.BackColor = Color.AntiqueWhite;
+                
             }
 
 
@@ -158,6 +164,12 @@ namespace Sbrowser
         {
             label1.Text = "loaded!";
             label1.BackColor = Color.Green;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form3 about = new Form3();
+            about.ShowDialog();
         }
     }
 }
