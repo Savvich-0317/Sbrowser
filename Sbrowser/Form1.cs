@@ -171,5 +171,22 @@ namespace Sbrowser
             Form3 about = new Form3();
             about.ShowDialog();
         }
+        bool pinned = false;
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (!pinned) {
+                pinned = true;
+                this.TopMost = true;
+                button7.Text = "📎";
+            }
+            else
+            {
+                pinned = false;
+                this.TopMost = false;
+                button7.Text = "🧷";
+            }
+            
+        }
+
     }
 }
