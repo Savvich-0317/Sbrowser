@@ -78,13 +78,14 @@ namespace Sbrowser
         
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
+            
             textBox1.Text = webView21.Source.ToString();
 
             if (CheckSource != webView21.Source.ToString())
             {
                 PrevSource = CheckSource;
                 CheckSource = webView21.Source.ToString();
-                
+                listBox1.Items.Add(webView21.Source.ToString());
             }
         }
 
@@ -123,7 +124,7 @@ namespace Sbrowser
 
         private void SendAdress(string uris)
         {
-
+            
             try
             {
 
@@ -186,6 +187,16 @@ namespace Sbrowser
                 button7.Text = "🧷";
             }
             
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = listBox1.SelectedItem.ToString();
         }
 
     }
