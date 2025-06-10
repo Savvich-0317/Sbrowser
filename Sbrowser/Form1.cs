@@ -85,7 +85,10 @@ namespace Sbrowser
             {
                 PrevSource = CheckSource;
                 CheckSource = webView21.Source.ToString();
-                listBox1.Items.Add(webView21.Source.ToString());
+                if (!listBox1.Items.Contains(webView21.Source.ToString())){
+                    listBox1.Items.Add(webView21.Source.ToString());
+                }
+                
             }
         }
 
@@ -196,8 +199,33 @@ namespace Sbrowser
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox1.Text = listBox1.SelectedItem.ToString();
+            if (listBox1.SelectedItem != null) {
+                webView21.Source = new Uri(listBox1.SelectedItem.ToString());
+            }
+            
         }
 
+        private void listBox1_MouseLeave(object sender, EventArgs e)
+        {
+            listBox1.Width = 130;
+        }
+
+        private void listBox1_MouseEnter(object sender, EventArgs e)
+        {
+            listBox1.Width = 260;
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+        }
+
+        private void listBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+        }
     }
 }
