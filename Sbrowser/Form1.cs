@@ -5,9 +5,12 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Web.WebView2.Core;
 using Sbrowser.Properties;
 
 
@@ -19,20 +22,24 @@ namespace Sbrowser
 
     public partial class Form1 : Form
     {
+
         string CheckSource = Settings.Default.homepage;
         string PrevSource = "";
+        bool ForCheckerHistory = true;
         public Form1()
         {
-            Timer timer;
-            timer = new Timer();
+            
+            System.Windows.Forms.Timer timer;
+            timer = new System.Windows.Forms.Timer();
             timer.Interval = 1;
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
             SendAdress(Settings.Default.homepage);
-            
 
         }
+
+
 
         private void CheckerCycle(object sender, EventArgs e)
         {
@@ -125,6 +132,10 @@ namespace Sbrowser
             settings.ShowDialog();
         }
 
+
+        public void DeleteHistory() {
+            webView21.CoreWebView2.Profile.ClearBrowsingDataAsync();
+        }
         private void SendAdress(string uris)
         {
             
@@ -160,6 +171,12 @@ namespace Sbrowser
 
         private void webView21_ContentLoading_1(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
         {
+            if (ForCheckerHistory && Settings.Default.ClearHistory) {
+                DeleteHistory();
+                ForCheckerHistory = false;
+                webView21.Reload();
+            }
+
             label1.Text = "loading...";
             label1.BackColor = Color.Yellow;
         }
@@ -224,8 +241,20 @@ namespace Sbrowser
         {
             if (e.KeyCode == Keys.D)
             {
+                webView21.CoreWebView2.Profile.ClearBrowsingDataAsync();
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
+            
         }
+
+        private void webView21_Layout(object sender, LayoutEventArgs e)
+        {
+            if (Settings.Default.ClearHistory)
+            {
+                DeleteHistory();
+            }
+        }
+
+    
     }
 }

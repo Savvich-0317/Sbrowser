@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Web.WebView2.WinForms;
 using Sbrowser.Properties;
 
 namespace Sbrowser
@@ -17,8 +18,17 @@ namespace Sbrowser
         {
             
             InitializeComponent();
+            
             comboBox1.SelectedIndex = Convert.ToInt32(Settings.Default.theme);
             textBox1.Text = Settings.Default.homepage;
+            if (Settings.Default.ClearHistory)
+            {
+                checkBox1.Checked = true;
+            }
+            else
+            {
+                checkBox1.Checked = false;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -28,6 +38,7 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Settings.Default.ClearHistory = checkBox1.Checked;
             Settings.Default.homepage = textBox1.Text;
             Settings.Default.theme =Convert.ToBoolean(comboBox1.SelectedIndex);
             Settings.Default.Save();
@@ -38,5 +49,14 @@ namespace Sbrowser
         {
             
         }
+        Form1 main = new Form1();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            main.DeleteHistory();
+            MessageBox.Show("All your data has been removed!");
+        }
+
+
     }
 }

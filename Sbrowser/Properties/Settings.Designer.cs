@@ -46,5 +46,17 @@ namespace Sbrowser.Properties {
                 this["theme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ClearHistory {
+            get {
+                return ((bool)(this["ClearHistory"]));
+            }
+            set {
+                this["ClearHistory"] = value;
+            }
+        }
     }
 }
