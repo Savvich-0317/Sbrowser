@@ -43,6 +43,15 @@ namespace Sbrowser
 
         private void CheckerCycle(object sender, EventArgs e)
         {
+            if (textBox1.Text.Contains("https://"))
+            {
+                label3.Visible = true;
+            }
+            else
+            {
+                label3.Visible = false;
+            }
+
             if (Settings.Default.theme == false)
             {
                 this.BackColor = Color.Gray;
@@ -94,6 +103,7 @@ namespace Sbrowser
                 CheckSource = webView21.Source.ToString();
                 if (!listBox1.Items.Contains(webView21.Source.ToString())){
                     listBox1.Items.Add(webView21.Source.ToString());
+                    listBox1.SelectedIndex = listBox1.Items.Count - 1;
                 }
                 
             }
@@ -216,9 +226,7 @@ namespace Sbrowser
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null) {
-                webView21.Source = new Uri(listBox1.SelectedItem.ToString());
-            }
+
             
         }
 
@@ -230,6 +238,7 @@ namespace Sbrowser
         private void listBox1_MouseEnter(object sender, EventArgs e)
         {
             listBox1.Width = 260;
+            
         }
 
         private void button8_Click_1(object sender, EventArgs e)
@@ -255,6 +264,17 @@ namespace Sbrowser
             }
         }
 
-    
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                webView21.Source = new Uri(listBox1.SelectedItem.ToString());
+            }
+        }
     }
 }
