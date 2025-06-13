@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 using Sbrowser.Properties;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 
 
@@ -274,6 +276,43 @@ namespace Sbrowser
             if (listBox1.SelectedItem != null)
             {
                 webView21.Source = new Uri(listBox1.SelectedItem.ToString());
+            }
+        }
+        private System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            var buttonsWithTooltips = new[]
+            {
+                (button: button2, tip: "Previous page."),
+                (button: button3, tip: "Reload page."),
+                (button: button4, tip: "Home page."),
+                (button: button5, tip: "Settings."),
+                (button: button6, tip: "About."),
+                (button: button1, tip: "Go to adress."),
+                (button: button7, tip: "Clip/unclip window."),
+                (button: button8, tip: "Clear all history of pages."),
+
+            };
+
+            if (checkBox1.Checked)
+            {
+                foreach (var btn in buttonsWithTooltips)
+                {
+                    ToolTip1.SetToolTip(btn.button, btn.tip);
+                    ToolTip1.SetToolTip(listBox1, "Pages history.");
+                    ToolTip1.SetToolTip(label1, "Page status.");
+                    ToolTip1.SetToolTip(label3, "This page is secured.");
+                }
+            }
+            else
+            {
+                foreach (var btn in buttonsWithTooltips)
+                {
+                    ToolTip1.SetToolTip(btn.button, "");
+                    ToolTip1.SetToolTip(listBox1, "");
+                    ToolTip1.SetToolTip(label1, "");
+                    ToolTip1.SetToolTip(label3, "");
+                }
             }
         }
     }
