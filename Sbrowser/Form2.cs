@@ -19,6 +19,8 @@ namespace Sbrowser
             
             InitializeComponent();
             
+            label6.Text = Settings.Default.Opacity.ToString();
+            trackBar1.Value = Settings.Default.Opacity;
             comboBox1.SelectedIndex = Convert.ToInt32(Settings.Default.theme);
             textBox1.Text = Settings.Default.homepage;
             if (Settings.Default.ClearHistory)
@@ -38,6 +40,8 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            Settings.Default.Opacity = trackBar1.Value;
             Settings.Default.ClearHistory = checkBox1.Checked;
             Settings.Default.homepage = textBox1.Text;
             Settings.Default.theme =Convert.ToBoolean(comboBox1.SelectedIndex);
@@ -57,6 +61,9 @@ namespace Sbrowser
             MessageBox.Show("All your data has been removed!");
         }
 
-
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            label6.Text = trackBar1.Value.ToString();
+        }
     }
 }

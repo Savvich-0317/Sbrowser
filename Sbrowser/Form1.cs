@@ -37,6 +37,7 @@ namespace Sbrowser
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
+            
             SendAdress(Settings.Default.homepage);
 
         }
@@ -45,6 +46,11 @@ namespace Sbrowser
 
         private void CheckerCycle(object sender, EventArgs e)
         {
+
+
+            this.Opacity = Convert.ToDouble( Settings.Default.Opacity / 100.0);
+
+
             if (textBox1.Text.Contains("https://"))
             {
                 label3.Visible = true;
