@@ -136,6 +136,7 @@ namespace Sbrowser
 
         private void button3_Click(object sender, EventArgs e)
         {
+            stopwatch.Reset();
             webView21.Reload();
         }
 
@@ -186,22 +187,32 @@ namespace Sbrowser
 
             }
         }
-
-        private void webView21_ContentLoading_1(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
+        Stopwatch stopwatch = new Stopwatch();
+        public void webView21_ContentLoading_1(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
         {
             if (ForCheckerHistory && Settings.Default.ClearHistory) {
                 DeleteHistory();
                 ForCheckerHistory = false;
                 webView21.Reload();
             }
-
+            
+            stopwatch.Reset();
+            stopwatch.Start();
             label1.Text = "loading...";
             label1.BackColor = Color.Yellow;
         }
 
         private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
-            label1.Text = "loaded!";
+            if (stopwatch.Elapsed.Minutes == 0)
+            {
+                label1.Text = "loaded! " + stopwatch.Elapsed.Seconds + "." + stopwatch.Elapsed.Milliseconds + "s";
+            }
+            else
+            {
+                label1.Text = "loaded! " + "Big";
+            }
+            
             label1.BackColor = Color.Green;
         }
 
