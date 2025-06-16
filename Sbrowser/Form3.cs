@@ -12,11 +12,16 @@ namespace Sbrowser
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        private Form1 main;/*Очень важная штука*/
+        public Form3(Form1 form /*Очень важная штука*/)
         {
             InitializeComponent();
+            this.main = form; /*Очень важная штука*/
         }
-
-     
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            main.SendAdress("https://github.com/Savvich-0317/Sbrowser");
+        }
     }
 }

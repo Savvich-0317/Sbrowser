@@ -155,7 +155,7 @@ namespace Sbrowser
         public void DeleteHistory() {
             webView21.CoreWebView2.Profile.ClearBrowsingDataAsync();
         }
-        private void SendAdress(string uris)
+        public void SendAdress(string uris)
         {
             
             try
@@ -210,7 +210,7 @@ namespace Sbrowser
             }
             else
             {
-                label1.Text = "loaded! " + "Big";
+                label1.Text = "loaded! Big";
             }
             
             label1.BackColor = Color.Green;
@@ -218,7 +218,7 @@ namespace Sbrowser
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Form3 about = new Form3();
+            Form3 about = new Form3(this /*Очень важная штука*/);
             about.ShowDialog();
         }
         bool pinned = false;
