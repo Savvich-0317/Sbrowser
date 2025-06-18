@@ -21,7 +21,7 @@ namespace Sbrowser
             
             label6.Text = Settings.Default.Opacity.ToString();
             trackBar1.Value = Settings.Default.Opacity;
-            comboBox1.SelectedIndex = Convert.ToInt32(Settings.Default.theme);
+            comboBox1.SelectedItem = Settings.Default.theme;
             textBox1.Text = Settings.Default.homepage;
             if (Settings.Default.ClearHistory)
             {
@@ -44,7 +44,7 @@ namespace Sbrowser
             Settings.Default.Opacity = trackBar1.Value;
             Settings.Default.ClearHistory = checkBox1.Checked;
             Settings.Default.homepage = textBox1.Text;
-            Settings.Default.theme =Convert.ToBoolean(comboBox1.SelectedIndex);
+            Settings.Default.theme = comboBox1.SelectedItem.ToString();
             Settings.Default.Save();
             button1.Text = "Saved!";
         }

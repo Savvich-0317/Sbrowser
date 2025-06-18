@@ -60,19 +60,36 @@ namespace Sbrowser
                 label3.Visible = false;
             }
 
-            if (Settings.Default.theme == false)
+            if (Settings.Default.theme == "gray")
             {
+                label3.ForeColor = Color.Black;
+                label2.ForeColor = Color.Black;
+                checkBox1.ForeColor = Color.Black;
                 this.BackColor = Color.Gray;
+                listBox1.BackColor = Color.White;
                 webView21.BackColor = Color.Gray;
                 textBox1.BackColor = Color.Gray;
                 
             }
-            else
+            else if (Settings.Default.theme == "white")
             {
+                label3.ForeColor = Color.Black;
+                label2.ForeColor = Color.Black;
+                checkBox1.ForeColor = Color.Black;
                 this.BackColor = Color.AntiqueWhite;
+                listBox1.BackColor = Color.White;
                 webView21.BackColor = Color.AntiqueWhite;
                 textBox1.BackColor = Color.AntiqueWhite;
                 
+            }
+            else if (Settings.Default.theme == "neon dark")
+            {
+                label3.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                checkBox1.ForeColor = Color.White;
+                this.BackColor = Color.FromArgb(23, 26, 33);
+                listBox1.BackColor = Color.FromArgb(128, 172, 170);
+                textBox1.BackColor = Color.FromArgb(102, 192, 244);
             }
 
 

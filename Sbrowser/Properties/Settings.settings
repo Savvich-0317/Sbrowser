@@ -5,14 +5,20 @@
     <Setting Name="homepage" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://google.com</Value>
     </Setting>
-    <Setting Name="theme" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+    <Setting Name="theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">white</Value>
     </Setting>
     <Setting Name="ClearHistory" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Opacity" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="Best" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;string&gt;google.com&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
   </Settings>
 </SettingsFile>
