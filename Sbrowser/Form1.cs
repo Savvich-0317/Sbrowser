@@ -39,6 +39,11 @@ namespace Sbrowser
             InitializeComponent();
             
             SendAdress(Settings.Default.homepage);
+            for (int i = 0; i < Settings.Default.Best.Count; i++)
+            {
+                listBox2.Items.Add(Settings.Default.Best[i]);
+            }
+            
 
         }
 
@@ -269,10 +274,12 @@ namespace Sbrowser
         private void listBox1_MouseLeave(object sender, EventArgs e)
         {
             listBox1.Width = 130;
+            this.ActiveControl = null;
         }
 
         private void listBox1_MouseEnter(object sender, EventArgs e)
         {
+            listBox1.Focus();
             listBox1.Width = 260;
             
         }
@@ -286,8 +293,17 @@ namespace Sbrowser
         {
             if (e.KeyCode == Keys.D)
             {
-                webView21.CoreWebView2.Profile.ClearBrowsingDataAsync();
                 listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+
+            if (e.KeyCode == Keys.Q)
+            {
+                if (!listBox2.Visible)
+                {
+                    listBox2.Visible = true;
+                    listBox1.Visible = false;
+                }
+
             }
             
         }
@@ -309,7 +325,7 @@ namespace Sbrowser
         {
             if (listBox1.SelectedItem != null)
             {
-                webView21.Source = new Uri(listBox1.SelectedItem.ToString());
+                SendAdress(listBox1.SelectedItem.ToString());
             }
         }
         private System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
@@ -348,6 +364,49 @@ namespace Sbrowser
                     ToolTip1.SetToolTip(label3, "");
                 }
             }
+        }
+
+        private void webView21_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listBox2_DoubleClick(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                SendAdress(listBox2.SelectedItem.ToString());
+            }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void listBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Q)
+            {
+                
+               
+                listBox2.Visible = false;
+                listBox1.Visible = true;
+                
+            }
+        }
+
+        private void listBox2_MouseEnter(object sender, EventArgs e)
+        {
+            listBox2.Focus();
+            listBox2.Width = 260;
+        }
+
+        private void listBox2_MouseLeave(object sender, EventArgs e)
+        {
+            listBox2.Width = 130;
+            this.ActiveControl = null;
         }
     }
 }

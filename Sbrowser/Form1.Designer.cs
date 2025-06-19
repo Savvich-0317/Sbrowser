@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             this.webView21.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.webView21_SourceChanged);
             this.webView21.ContentLoading += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs>(this.webView21_ContentLoading_1);
             this.webView21.Layout += new System.Windows.Forms.LayoutEventHandler(this.webView21_Layout);
+            this.webView21.MouseEnter += new System.EventHandler(this.webView21_MouseEnter);
             // 
             // button2
             // 
@@ -174,11 +176,24 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // listBox2
+            // 
+            resources.ApplyResources(this.listBox2, "listBox2");
+            this.listBox2.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Name = "listBox2";
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            this.listBox2.DoubleClick += new System.EventHandler(this.listBox2_DoubleClick);
+            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyDown);
+            this.listBox2.MouseEnter += new System.EventHandler(this.listBox2_MouseEnter);
+            this.listBox2.MouseLeave += new System.EventHandler(this.listBox2_MouseLeave);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -219,6 +234,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
 
