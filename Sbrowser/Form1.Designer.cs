@@ -179,6 +179,7 @@
             // listBox2
             // 
             resources.ApplyResources(this.listBox2, "listBox2");
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.listBox2.Cursor = System.Windows.Forms.Cursors.Cross;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Name = "listBox2";

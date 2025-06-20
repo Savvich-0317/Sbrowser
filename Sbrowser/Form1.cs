@@ -39,11 +39,8 @@ namespace Sbrowser
             InitializeComponent();
             
             SendAdress(Settings.Default.homepage);
-            for (int i = 0; i < Settings.Default.Best.Count; i++)
-            {
-                listBox2.Items.Add(Settings.Default.Best[i]);
-            }
-            
+
+            UpdateList2();
 
         }
 
@@ -296,6 +293,13 @@ namespace Sbrowser
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
 
+            if (e.KeyCode == Keys.E && listBox1.SelectedItem != null && !Settings.Default.Best.Contains(listBox1.SelectedItem.ToString()))
+            {
+                Settings.Default.Best.Add(listBox1.SelectedItem.ToString());
+                Settings.Default.Save();
+                UpdateList2();
+            }
+
             if (e.KeyCode == Keys.Q)
             {
                 if (!listBox2.Visible)
@@ -395,6 +399,13 @@ namespace Sbrowser
                 listBox1.Visible = true;
                 
             }
+
+            if (e.KeyCode == Keys.D && listBox2.SelectedItem != null)
+            {
+                Settings.Default.Best.RemoveAt(listBox2.SelectedIndex);
+                Settings.Default.Save();
+                UpdateList2();
+            }
         }
 
         private void listBox2_MouseEnter(object sender, EventArgs e)
@@ -407,6 +418,16 @@ namespace Sbrowser
         {
             listBox2.Width = 130;
             this.ActiveControl = null;
+        }
+
+        public void UpdateList2()
+        {
+            listBox2.Items.Clear();
+
+            for (int i = 0; i < Settings.Default.Best.Count; i++)
+            {
+                listBox2.Items.Add(Settings.Default.Best[i]);
+            }
         }
     }
 }
