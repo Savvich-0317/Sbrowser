@@ -429,5 +429,11 @@ namespace Sbrowser
                 listBox2.Items.Add(Settings.Default.Best[i]);
             }
         }
+        
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form4 Pomodoro = new Form4();
+            Pomodoro.Show();
+        }
     }
 }

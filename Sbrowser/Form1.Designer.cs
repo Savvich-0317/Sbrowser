@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,11 +190,21 @@
             this.listBox2.MouseEnter += new System.EventHandler(this.listBox2_MouseEnter);
             this.listBox2.MouseLeave += new System.EventHandler(this.listBox2_MouseLeave);
             // 
+            // button9
+            // 
+            resources.ApplyResources(this.button9, "button9");
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Help;
+            this.button9.Name = "button9";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
@@ -236,6 +247,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button button9;
     }
 }
 
