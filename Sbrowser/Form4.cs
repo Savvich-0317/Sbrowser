@@ -12,24 +12,46 @@ namespace Sbrowser
 {
     public partial class Form4 : Form
     {
-        
+        System.Windows.Forms.Timer timer;
+
 
         public Form4()
         {
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 6000;
+            timer.Tick += CheckerCycle;
+            timer.Start();
             InitializeComponent();
             label3.Text = trackBar1.Value.ToString();
-
-
+            
             label2.Text = trackBar1.Value.ToString() + " minutes to focus!";
         }
+    
+    
+
+            
+            
+        
         
         private void CheckerCycle(object sender, EventArgs e)
         {
-            label3.Text = (trackBar1.Value = trackBar1.Value - 1).ToString();
-            
+            if (Convert.ToInt32(label3.Text) <= 1)
+            {
+                label3.Text = "✔";
+                timer.Stop();
+                trackBar1.Enabled = true;
+                button1.Enabled = true;
+                
+                
+            }
+            else
+            {
+                label3.Text = (trackBar1.Value = trackBar1.Value - 1).ToString();
+
+            }
         }
 
-        
+
 
 
         private void Form4_Load(object sender, EventArgs e)
@@ -45,13 +67,10 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Timer timer;
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 60000;
-            timer.Tick += CheckerCycle;
             timer.Start();
             trackBar1.Enabled = false;
             button1.Enabled = false;
         }
     }
 }
+
