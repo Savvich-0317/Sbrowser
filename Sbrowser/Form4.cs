@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,13 +36,14 @@ namespace Sbrowser
         
         private void CheckerCycle(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(label3.Text) <= 1)
+            if (Convert.ToInt64(label3.Text) <= 1)
             {
                 label3.Text = "✔";
                 timer.Stop();
                 trackBar1.Enabled = true;
                 button1.Enabled = true;
-                
+                SoundPlayer notify = new SoundPlayer(@".\notify.wav");
+                notify.Play();
                 
             }
             else
