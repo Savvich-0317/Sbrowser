@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,19 +41,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label1.Location = new System.Drawing.Point(44, 9);
+            this.label1.Location = new System.Drawing.Point(59, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(172, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "🍅 pomodoro.";
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(49, 154);
+            this.trackBar1.Location = new System.Drawing.Point(65, 190);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar1.Maximum = 60;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(137, 45);
+            this.trackBar1.Size = new System.Drawing.Size(183, 56);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.Value = 35;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -60,17 +63,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 202);
+            this.label2.Location = new System.Drawing.Point(89, 249);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(49, 222);
+            this.button1.Location = new System.Drawing.Point(65, 273);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 37);
+            this.button1.Size = new System.Drawing.Size(183, 46);
             this.button1.TabIndex = 3;
             this.button1.Text = "Let the focus begin!!!";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,22 +85,36 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F);
-            this.label3.Location = new System.Drawing.Point(88, 74);
+            this.label3.Location = new System.Drawing.Point(117, 91);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 39);
+            this.label3.Size = new System.Drawing.Size(70, 51);
             this.label3.TabIndex = 4;
             this.label3.Text = "00";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(257, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(62, 31);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Hide\r\n";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 284);
+            this.ClientSize = new System.Drawing.Size(321, 350);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -112,5 +131,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }

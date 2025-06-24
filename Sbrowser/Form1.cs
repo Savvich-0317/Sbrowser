@@ -37,18 +37,17 @@ namespace Sbrowser
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
-            
+
             SendAdress(Settings.Default.homepage);
 
             UpdateList2();
 
         }
-
+        Form4 Pomodoro = new Form4();
 
 
         private void CheckerCycle(object sender, EventArgs e)
         {
-
 
             this.Opacity = Convert.ToDouble( Settings.Default.Opacity / 100.0);
 
@@ -429,11 +428,12 @@ namespace Sbrowser
                 listBox2.Items.Add(Settings.Default.Best[i]);
             }
         }
-        
+
         private void button9_Click(object sender, EventArgs e)
         {
-            Form4 Pomodoro = new Form4();
             Pomodoro.Show();
+
         }
+
     }
 }

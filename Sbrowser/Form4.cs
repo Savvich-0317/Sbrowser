@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sbrowser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,8 @@ namespace Sbrowser
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 6000;
             timer.Tick += CheckerCycle;
-            timer.Start();
             InitializeComponent();
             label3.Text = trackBar1.Value.ToString();
-            
             label2.Text = trackBar1.Value.ToString() + " minutes to focus!";
         }
     
@@ -36,7 +35,7 @@ namespace Sbrowser
         
         private void CheckerCycle(object sender, EventArgs e)
         {
-            if (Convert.ToInt64(label3.Text) <= 1)
+            if (trackBar1.Value <= 1)
             {
                 label3.Text = "✔";
                 timer.Stop();
@@ -49,6 +48,7 @@ namespace Sbrowser
             else
             {
                 label3.Text = (trackBar1.Value = trackBar1.Value - 1).ToString();
+              
 
             }
         }
@@ -72,6 +72,11 @@ namespace Sbrowser
             timer.Start();
             trackBar1.Enabled = false;
             button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }
