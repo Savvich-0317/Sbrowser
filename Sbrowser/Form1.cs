@@ -48,7 +48,7 @@ namespace Sbrowser
 
         private void CheckerCycle(object sender, EventArgs e)
         {
-
+            button9.Text = Settings.Default.Pomodoro;
             this.Opacity = Convert.ToDouble( Settings.Default.Opacity / 100.0);
 
 
@@ -435,5 +435,10 @@ namespace Sbrowser
 
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.Pomodoro = "🍅";
+            Settings.Default.Save();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Sbrowser;
+using Sbrowser.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,9 @@ namespace Sbrowser
               
 
             }
+            Settings.Default.Pomodoro = label3.Text;
+            Settings.Default.Save();
+
         }
 
 
@@ -74,9 +78,15 @@ namespace Sbrowser
             button1.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Visible = false;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                this.Visible = false;
+                e.Cancel = true;
+            }
         }
     }
 }

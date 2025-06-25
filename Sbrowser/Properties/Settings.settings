@@ -20,5 +20,8 @@
   &lt;string&gt;google.com&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
+    <Setting Name="Pomodoro" Type="System.String" Scope="User">
+      <Value Profile="(Default)">🍅</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

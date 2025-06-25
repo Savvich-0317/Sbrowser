@@ -668,13 +668,13 @@ bookmarks.
     <value>NoControl</value>
   </data>
   <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1027, 4</value>
+    <value>1020, 4</value>
   </data>
   <data name="button9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 30</value>
+    <value>52, 30</value>
   </data>
   <data name="button9.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
