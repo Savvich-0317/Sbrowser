@@ -30,7 +30,14 @@ namespace Sbrowser
     
     
 
-            
+        private void BlackListUpdate()
+        {
+            listBox1.Items.Clear();
+            for (int i = 0; i < Settings.Default.Blacklist.Count; i++)
+            {
+                listBox1.Items.Add(Settings.Default.Blacklist[i]);
+            }
+        }
             
         
         
@@ -62,7 +69,7 @@ namespace Sbrowser
 
         private void Form4_Load(object sender, EventArgs e)
         {
-
+            BlackListUpdate();
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -87,6 +94,23 @@ namespace Sbrowser
                 this.Visible = false;
                 e.Cancel = true;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Blacklist.Add(textBox1.Text);
+            Settings.Default.Save();
+            BlackListUpdate();
         }
     }
 }
