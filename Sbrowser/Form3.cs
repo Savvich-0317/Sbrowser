@@ -18,10 +18,40 @@ namespace Sbrowser
             InitializeComponent();
             this.main = form; /*Очень важная штука*/
         }
-        
+        public async Task FormZoomAsync()
+        {
+            int ScaleModifier = 15;
+            for (int i = 0; i < ScaleModifier; i++)
+            {
+                if (i - ScaleModifier <= i)
+                {
+                    await Task.Delay(1);
+                    this.Location = new Point(this.Location.X - 1, this.Location.Y - 1);
+                    this.Height += 2;
+                    this.Width += 2;
+                }
+
+            }
+            for (int i = 0; i < ScaleModifier; i++)
+            {
+                if (i - ScaleModifier <= i)
+                {
+                    await Task.Delay(1);
+                    this.Location = new Point(this.Location.X + 1, this.Location.Y + 1);
+                    this.Height -= 2;
+                    this.Width -= 2;
+                }
+
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             main.SendAdress("https://github.com/Savvich-0317/Sbrowser");
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            FormZoomAsync();
         }
     }
 }

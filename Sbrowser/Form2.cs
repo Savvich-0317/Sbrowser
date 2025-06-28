@@ -32,6 +32,35 @@ namespace Sbrowser
                 checkBox1.Checked = false;
             }
         }
+        public async Task FormZoomAsync()
+        {
+            int ScaleModifier = 15;
+            for (int i = 0; i < ScaleModifier; i++)
+            {
+                if (i - ScaleModifier <= i)
+                {
+                    await Task.Delay(1);
+                    this.Location = new Point(this.Location.X - 1, this.Location.Y - 1);
+                    this.Height += 2;
+                    this.Width += 2;
+                }
+
+            }
+            for (int i = 0; i < ScaleModifier; i++)
+            {
+                if (i - ScaleModifier <= i)
+                {
+                    await Task.Delay(1);
+                    this.Location = new Point(this.Location.X + 1, this.Location.Y + 1);
+                    this.Height -= 2;
+                    this.Width -= 2;
+                }
+
+            }
+        }
+
+
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -64,6 +93,11 @@ namespace Sbrowser
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label6.Text = trackBar1.Value.ToString();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            FormZoomAsync();
         }
     }
 }

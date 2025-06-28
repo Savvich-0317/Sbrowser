@@ -64,12 +64,39 @@ namespace Sbrowser
 
         }
 
+        public async Task FormZoomAsync()
+        {
+            int ScaleModifier = 15;
+            for (int i = 0; i < ScaleModifier; i++)
+            {
+                if (i - ScaleModifier <= i)
+                {
+                    await Task.Delay(1);
+                    this.Location = new Point(this.Location.X - 1, this.Location.Y - 1);
+                    this.Height += 2;
+                    this.Width += 2;
+                }
+
+            }
+            for (int i = 0; i < ScaleModifier; i++)
+            {
+                if (i - ScaleModifier <= i)
+                {
+                    await Task.Delay(1);
+                    this.Location = new Point(this.Location.X + 1, this.Location.Y + 1);
+                    this.Height -= 2;
+                    this.Width -= 2;
+                }
+
+            }
+        }
 
 
-
-        private void Form4_Load(object sender, EventArgs e)
+        private async void Form4_Load(object sender, EventArgs e)
         {
             BlackListUpdate();
+            FormZoomAsync();
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -111,6 +138,16 @@ namespace Sbrowser
             Settings.Default.Blacklist.Add(textBox1.Text);
             Settings.Default.Save();
             BlackListUpdate();
+        }
+
+        private void Form4_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form4_Shown(object sender, EventArgs e)
+        {
+            
         }
     }
 }
