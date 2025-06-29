@@ -120,7 +120,15 @@ namespace Sbrowser
         
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
+            for (int i = 0; i < Settings.Default.Blacklist.Count; i++) {
+                if (webView21.Source.ToString().Contains(Settings.Default.Blacklist[i].ToString().ToLower()))
+                {
+                    SendAdress("https://savvich.ru/discord");
+                    break;
+                }
             
+            }
+
             textBox1.Text = webView21.Source.ToString();
 
             if (CheckSource != webView21.Source.ToString())
@@ -191,7 +199,6 @@ namespace Sbrowser
                 {
                     try
                     {
-
                         webView21.Source = new Uri("https://" + uris);
                         uris = "https://" + uris;
                     }
