@@ -149,6 +149,16 @@ namespace Sbrowser
         {
             
         }
+
+        private void listBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D && listBox1.SelectedItem != null)
+            {
+                Settings.Default.Blacklist.RemoveAt(listBox1.SelectedIndex);
+                Settings.Default.Save();
+                BlackListUpdate();
+            }
+        }
     }
 }
 
