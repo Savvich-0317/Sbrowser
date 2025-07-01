@@ -3,6 +3,7 @@ using Sbrowser.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -158,6 +159,13 @@ namespace Sbrowser
                 Settings.Default.Save();
                 BlackListUpdate();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Blacklist.Clear();
+            Settings.Default.Save();
+            BlackListUpdate();
         }
     }
 }

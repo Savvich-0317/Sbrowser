@@ -194,7 +194,7 @@
             // 
             resources.ApplyResources(this.button9, "button9");
             this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Help;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Name = "button9";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
