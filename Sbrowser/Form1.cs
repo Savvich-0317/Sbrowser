@@ -37,7 +37,8 @@ namespace Sbrowser
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
-
+            Settings.Default.Focused = false;
+            Settings.Default.Save();
             SendAdress(Settings.Default.homepage);
 
             UpdateList2();
@@ -121,7 +122,7 @@ namespace Sbrowser
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
             for (int i = 0; i < Settings.Default.Blacklist.Count; i++) {
-                if (webView21.Source.ToString().Contains(Settings.Default.Blacklist[i].ToString().ToLower()))
+                if (Settings.Default.Focused && webView21.Source.ToString().Contains(Settings.Default.Blacklist[i].ToString().ToLower()))
                 {
                     SendAdress("https://savvich.ru/discord");
                     break;

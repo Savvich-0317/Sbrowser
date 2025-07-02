@@ -110,5 +110,17 @@ namespace Sbrowser.Properties {
                 this["Blacklist"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Focused {
+            get {
+                return ((bool)(this["Focused"]));
+            }
+            set {
+                this["Focused"] = value;
+            }
+        }
     }
 }

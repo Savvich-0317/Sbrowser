@@ -52,6 +52,7 @@ namespace Sbrowser
                 button1.Enabled = true;
                 SoundPlayer notify = new SoundPlayer(@".\notify.wav");
                 notify.Play();
+                Settings.Default.Focused = false;
                 
             }
             else
@@ -111,6 +112,8 @@ namespace Sbrowser
             timer.Start();
             trackBar1.Enabled = false;
             button1.Enabled = false;
+            Settings.Default.Focused = true;
+            Settings.Default.Save();
         }
 
 
@@ -166,6 +169,16 @@ namespace Sbrowser
             Settings.Default.Blacklist.Clear();
             Settings.Default.Save();
             BlackListUpdate();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && textBox1.Text != null)
+            {
+                Settings.Default.Blacklist.Add(textBox1.Text);
+                Settings.Default.Save();
+                BlackListUpdate();
+            }
         }
     }
 }
