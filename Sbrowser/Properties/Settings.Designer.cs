@@ -122,5 +122,29 @@ namespace Sbrowser.Properties {
                 this["Focused"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CardSound {
+            get {
+                return ((bool)(this["CardSound"]));
+            }
+            set {
+                this["CardSound"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Animations {
+            get {
+                return ((bool)(this["Animations"]));
+            }
+            set {
+                this["Animations"] = value;
+            }
+        }
     }
 }

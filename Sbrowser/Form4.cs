@@ -96,8 +96,16 @@ namespace Sbrowser
 
         private async void Form4_Load(object sender, EventArgs e)
         {
-            BlackListUpdate();
-            FormZoomAsync();
+            if (Settings.Default.Animations)
+            {
+                FormZoomAsync();
+            }
+            if (Settings.Default.CardSound)
+            {
+                SoundPlayer card = new SoundPlayer(@".\card.wav");
+                card.Play();
+            }
+
 
         }
 

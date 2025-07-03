@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,14 +24,10 @@ namespace Sbrowser
             trackBar1.Value = Settings.Default.Opacity;
             comboBox1.SelectedItem = Settings.Default.theme;
             textBox1.Text = Settings.Default.homepage;
-            if (Settings.Default.ClearHistory)
-            {
-                checkBox1.Checked = true;
-            }
-            else
-            {
-                checkBox1.Checked = false;
-            }
+          
+            checkBox1.Checked = Settings.Default.ClearHistory;
+            checkBox2.Checked = Settings.Default.Animations;
+            checkBox3.Checked = Settings.Default.CardSound;
         }
         public async Task FormZoomAsync()
         {
@@ -74,6 +71,8 @@ namespace Sbrowser
             Settings.Default.ClearHistory = checkBox1.Checked;
             Settings.Default.homepage = textBox1.Text;
             Settings.Default.theme = comboBox1.SelectedItem.ToString();
+            Settings.Default.Animations = checkBox2.Checked;
+            Settings.Default.CardSound = checkBox3.Checked;
             Settings.Default.Save();
             button1.Text = "Saved!";
         }
@@ -97,7 +96,16 @@ namespace Sbrowser
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            FormZoomAsync();
+            if (Settings.Default.Animations)
+            {
+                FormZoomAsync();
+            }
+            if (Settings.Default.CardSound)
+            {
+                SoundPlayer card = new SoundPlayer(@".\card.wav");
+                card.Play();
+            }
+            
         }
     }
 }

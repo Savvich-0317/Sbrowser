@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Sbrowser.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,7 +53,16 @@ namespace Sbrowser
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            FormZoomAsync();
+            if (Settings.Default.Animations)
+            {
+                FormZoomAsync();
+            }
+            if (Settings.Default.CardSound)
+            {
+                SoundPlayer card = new SoundPlayer(@".\card.wav");
+                card.Play();
+            }
+
         }
     }
 }
