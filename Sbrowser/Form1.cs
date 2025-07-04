@@ -329,7 +329,8 @@ namespace Sbrowser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.Height = Convert.ToInt32(Settings.Default.StartScreenSize[0]);
+            this.Width = Convert.ToInt32(Settings.Default.StartScreenSize[1]);
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
@@ -446,6 +447,13 @@ namespace Sbrowser
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Default.Pomodoro = "🍅";
+            Settings.Default.Save();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.StartScreenSize[0] = this.Height.ToString();
+            Settings.Default.StartScreenSize[1] = this.Width.ToString();
             Settings.Default.Save();
         }
     }
