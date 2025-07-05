@@ -59,8 +59,8 @@ namespace Sbrowser
             }
             if (Settings.Default.CardSound)
             {
-                SoundPlayer card = new SoundPlayer(@".\card.wav");
-                card.Play();
+                //SoundPlayer card = new SoundPlayer(@".\card.wav");
+                //card.Play();
             }
 
         }

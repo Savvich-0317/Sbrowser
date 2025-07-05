@@ -452,9 +452,12 @@ namespace Sbrowser
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Settings.Default.StartScreenSize[0] = this.Height.ToString();
-            Settings.Default.StartScreenSize[1] = this.Width.ToString();
-            Settings.Default.Save();
+            if (Settings.Default.UseStartScreenSize)
+            {
+                Settings.Default.StartScreenSize[0] = this.Height.ToString();
+                Settings.Default.StartScreenSize[1] = this.Width.ToString();
+                Settings.Default.Save();
+            }
         }
     }
 }

@@ -73,6 +73,7 @@ namespace Sbrowser
             Settings.Default.theme = comboBox1.SelectedItem.ToString();
             Settings.Default.Animations = checkBox2.Checked;
             Settings.Default.CardSound = checkBox3.Checked;
+            Settings.Default.UseStartScreenSize = checkBox4.Checked;
             Settings.Default.Save();
             button1.Text = "Saved!";
         }
@@ -102,10 +103,15 @@ namespace Sbrowser
             }
             if (Settings.Default.CardSound)
             {
-                SoundPlayer card = new SoundPlayer(@".\card.wav");
-                card.Play();
+                //SoundPlayer card = new SoundPlayer(@".\card.wav");
+                //card.Play();
             }
             
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
