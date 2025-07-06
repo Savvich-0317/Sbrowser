@@ -46,6 +46,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,11 +200,19 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // listBox3
+            // 
+            resources.ApplyResources(this.listBox3, "listBox3");
+            this.listBox3.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Name = "listBox3";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.checkBox1);
@@ -250,6 +259,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 

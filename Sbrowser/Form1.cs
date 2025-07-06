@@ -118,9 +118,20 @@ namespace Sbrowser
             SendAdress(textBox1.Text);
         }
 
-        
+        int HistoryCursorShift = 0;
+        bool IsItNotBackChange = true;
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
+            if (IsItNotBackChange)
+            {
+                listBox3.Items.Insert(listBox3.Items.Count - HistoryCursorShift, webView21.Source.ToString());
+                listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
+            }
+
+            
+
+
+
             for (int i = 0; i < Settings.Default.Blacklist.Count; i++) {
                 if (Settings.Default.Focused && webView21.Source.ToString().Contains(Settings.Default.Blacklist[i].ToString().ToLower()))
                 {
@@ -155,10 +166,15 @@ namespace Sbrowser
        
         private void button2_Click(object sender, EventArgs e)
         {
-            if (PrevSource != "")
+            HistoryCursorShift += 1;
+            if (listBox3.Items.Count - HistoryCursorShift - 1 >= 0)
             {
-                webView21.Source = new Uri(PrevSource);
+                listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
+                IsItNotBackChange = false;
+                SendAdress(listBox3.SelectedItem.ToString());
+                listBox1.SelectedItem = listBox3.SelectedItem;
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -461,3 +477,4 @@ namespace Sbrowser
         }
     }
 }
+    
