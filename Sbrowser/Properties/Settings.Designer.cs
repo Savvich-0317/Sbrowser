@@ -172,5 +172,39 @@ namespace Sbrowser.Properties {
                 this["UseStartScreenSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color MainColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MainColor"]));
+            }
+            set {
+                this["MainColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color SecondColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SecondColor"]));
+            }
+            set {
+                this["SecondColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseWhiteText {
+            get {
+                return ((bool)(this["UseWhiteText"]));
+            }
+            set {
+                this["UseWhiteText"] = value;
+            }
+        }
     }
 }

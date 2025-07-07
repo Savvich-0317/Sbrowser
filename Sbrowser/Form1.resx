@@ -638,16 +638,16 @@ bookmarks.
     <value>1</value>
   </data>
   <data name="listBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="listBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="listBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>800, 33</value>
+    <value>800, 225</value>
   </data>
   <data name="listBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 472</value>
+    <value>130, 329</value>
   </data>
   <data name="listBox3.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>

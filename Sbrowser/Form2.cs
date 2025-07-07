@@ -19,7 +19,11 @@ namespace Sbrowser
         {
             
             InitializeComponent();
-            
+            checkBox5.Checked = Settings.Default.UseWhiteText;
+
+            button3.BackColor = Settings.Default.MainColor;
+            button4.BackColor = Settings.Default.SecondColor;
+
             label6.Text = Settings.Default.Opacity.ToString();
             trackBar1.Value = Settings.Default.Opacity;
             comboBox1.SelectedItem = Settings.Default.theme;
@@ -66,7 +70,9 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Settings.Default.UseWhiteText = checkBox5.Checked;
+            Settings.Default.MainColor = button3.BackColor;
+            Settings.Default.SecondColor = button4.BackColor;
             Settings.Default.Opacity = trackBar1.Value;
             Settings.Default.ClearHistory = checkBox1.Checked;
             Settings.Default.homepage = textBox1.Text;
@@ -112,6 +118,18 @@ namespace Sbrowser
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            button3.BackColor = colorDialog1.Color;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            button4.BackColor = colorDialog1.Color;
         }
     }
 }

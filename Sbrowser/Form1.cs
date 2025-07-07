@@ -94,7 +94,25 @@ namespace Sbrowser
                 textBox1.BackColor = Color.FromArgb(102, 192, 244);
             }
 
+            else if (Settings.Default.theme == "custom theme")
+            {
+                if (Settings.Default.UseWhiteText)
+                {
+                    checkBox1.ForeColor = Color.White;
+                    label3.ForeColor = Color.White;
+                    label2.ForeColor = Color.White;
+                }
+                else
+                {
+                    checkBox1.ForeColor = Color.Black;
+                    label3.ForeColor = Color.Black;
+                    label2.ForeColor = Color.Black;
+                }
 
+                listBox1.BackColor = Settings.Default.SecondColor;
+                textBox1.BackColor = Settings.Default.SecondColor;
+                this.BackColor = Settings.Default.MainColor;
+            }
 
 
             if (PrevSource == "" || PrevSource == webView21.Source.ToString())
