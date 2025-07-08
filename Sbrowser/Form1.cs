@@ -137,13 +137,20 @@ namespace Sbrowser
         }
 
         int HistoryCursorShift = 0;
-        bool IsItNotBackChange = true;
+        bool IsItBackChange = false;
         private void webView21_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
-            if (IsItNotBackChange)
+            if (IsItBackChange)
+            {
+                
+                listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
+                IsItBackChange = false;
+            }
+            else
             {
                 listBox3.Items.Insert(listBox3.Items.Count - HistoryCursorShift, webView21.Source.ToString());
                 listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
+
             }
 
             
@@ -184,15 +191,28 @@ namespace Sbrowser
        
         private void button2_Click(object sender, EventArgs e)
         {
-            HistoryCursorShift += 1;
-            if (listBox3.Items.Count - HistoryCursorShift - 1 >= 0)
+            if (listBox3.Items.Count - HistoryCursorShift - 2 >= 0)
             {
+                HistoryCursorShift += 1;
                 listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
-                IsItNotBackChange = false;
+                IsItBackChange = true;
+                SendAdress(listBox3.SelectedItem.ToString());
+                listBox1.SelectedItem = listBox3.SelectedItem;
+                
+            }
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedIndex + 2 <= listBox3.Items.Count)
+            {
+                HistoryCursorShift -= 1;
+                listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
+                IsItBackChange = true;
                 SendAdress(listBox3.SelectedItem.ToString());
                 listBox1.SelectedItem = listBox3.SelectedItem;
             }
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -493,6 +513,8 @@ namespace Sbrowser
                 Settings.Default.Save();
             }
         }
+
+
     }
 }
     

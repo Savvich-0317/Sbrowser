@@ -47,6 +47,7 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button9 = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,11 +208,21 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Name = "listBox3";
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.button10, "button10");
+            this.button10.Name = "button10";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.listBox2);
@@ -260,6 +271,7 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Button button10;
     }
 }
 
