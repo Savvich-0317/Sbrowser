@@ -150,6 +150,7 @@ namespace Sbrowser
             {
                 listBox3.Items.Insert(listBox3.Items.Count - HistoryCursorShift, webView21.Source.ToString());
                 listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
+                CanDoForward = 0;
 
             }
 
@@ -188,12 +189,13 @@ namespace Sbrowser
             }
         }
 
-       
+        int CanDoForward = 0;
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox3.Items.Count - HistoryCursorShift - 2 >= 0)
             {
                 HistoryCursorShift += 1;
+                CanDoForward += 1;
                 listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
                 IsItBackChange = true;
                 SendAdress(listBox3.SelectedItem.ToString());
@@ -205,8 +207,9 @@ namespace Sbrowser
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (listBox3.SelectedIndex + 2 <= listBox3.Items.Count)
+            if (listBox3.SelectedIndex + 2 <= listBox3.Items.Count && CanDoForward != 0)
             {
+                CanDoForward -= 1;
                 HistoryCursorShift -= 1;
                 listBox3.SelectedIndex = (listBox3.Items.Count - HistoryCursorShift - 1);
                 IsItBackChange = true;

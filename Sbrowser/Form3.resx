@@ -15102,11 +15102,13 @@
     <value>A: Yes, there is such a problem,
  it is caused by the abstract
  representation of the history
- of forward/backward movements
- on pages, when in all major browsers
- it resembles a tree diagram, in my
- case it is a line diagram. If you use the
- forward button as usual - this will not cause
+ of forward/backward
+ movements on pages,
+ when in all major browsers
+ it resembles a tree diagram
+, in my case it is a line diagram.
+ If you use the forward button
+ as usual - this will not cause
  problems. Rather, it is a feature.
 
 
