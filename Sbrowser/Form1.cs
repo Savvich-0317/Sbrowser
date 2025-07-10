@@ -516,8 +516,50 @@ namespace Sbrowser
                 Settings.Default.Save();
             }
         }
+    
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F11 && webView21.Dock == DockStyle.None)
+            {
+                webView21.Dock = DockStyle.Fill;
+                webView21.BringToFront();
+                
+
+            }
+            else
+            {
+                webView21.Dock = DockStyle.None;
+                webView21.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+                webView21.Height = this.Height - 70;
+                webView21.Width = this.Width - 156;
+                listBox1.BringToFront();
+                listBox2.BringToFront();
+                
+
+            }
+        }
+
+        private void webView21_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F11 && webView21.Dock == DockStyle.None)
+            {
+                webView21.Dock = DockStyle.Fill;
+                webView21.BringToFront();
 
 
+            }
+            else
+            {
+                webView21.Dock = DockStyle.None;
+                webView21.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+                webView21.Height = this.Height - 70;
+                webView21.Width = this.Width - 156;
+                listBox1.BringToFront();
+                listBox2.BringToFront();
+
+
+            }
+        }
     }
 }
     

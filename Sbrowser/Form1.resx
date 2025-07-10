@@ -126,7 +126,7 @@
     <value>85, 3</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 20</value>
+    <value>415, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>806, 2</value>
+    <value>758, 2</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 25</value>
@@ -181,7 +181,7 @@
     <value>138, 29</value>
   </data>
   <data name="webView21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 525</value>
+    <value>744, 522</value>
   </data>
   <data name="webView21.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -235,7 +235,7 @@
     <value>NoControl</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 2</value>
+    <value>506, 2</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 25</value>
@@ -268,7 +268,7 @@
     <value>NoControl</value>
   </data>
   <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 2</value>
+    <value>538, 2</value>
   </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 25</value>
@@ -301,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>706, 3</value>
+    <value>658, 3</value>
   </data>
   <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 24</value>
@@ -331,7 +331,7 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>627, 9</value>
+    <value>579, 9</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -364,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>738, 3</value>
+    <value>690, 3</value>
   </data>
   <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 24</value>
@@ -397,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="button7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>904, 2</value>
+    <value>856, 2</value>
   </data>
   <data name="button7.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 25</value>
@@ -430,7 +430,7 @@
     <value>2, 29</value>
   </data>
   <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 472</value>
+    <value>130, 459</value>
   </data>
   <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -457,7 +457,7 @@
     <value>NoControl</value>
   </data>
   <data name="button8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 504</value>
+    <value>2, 503</value>
   </data>
   <data name="button8.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 29</value>
@@ -490,7 +490,7 @@
     <value>Microsoft Sans Serif, 6.25pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 504</value>
+    <value>51, 503</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 48</value>
@@ -551,7 +551,7 @@ bookmarks.
     <value>True</value>
   </data>
   <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 537</value>
+    <value>2, 536</value>
   </data>
   <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 17</value>
@@ -584,7 +584,7 @@ bookmarks.
     <value>2, 29</value>
   </data>
   <data name="listBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 472</value>
+    <value>130, 459</value>
   </data>
   <data name="listBox2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -614,7 +614,7 @@ bookmarks.
     <value>NoControl</value>
   </data>
   <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 3</value>
+    <value>717, 3</value>
   </data>
   <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 24</value>
@@ -644,13 +644,16 @@ bookmarks.
     <value>NoControl</value>
   </data>
   <data name="listBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>489, 225</value>
+    <value>2, 246</value>
   </data>
   <data name="listBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 329</value>
+    <value>130, 251</value>
   </data>
   <data name="listBox3.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
+  </data>
+  <data name="listBox3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;listBox3.Name" xml:space="preserve">
     <value>listBox3</value>
@@ -701,7 +704,7 @@ bookmarks.
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>932, 554</value>
+    <value>884, 553</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
