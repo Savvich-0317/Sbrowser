@@ -206,5 +206,17 @@ namespace Sbrowser.Properties {
                 this["UseWhiteText"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DebugHistory {
+            get {
+                return ((bool)(this["DebugHistory"]));
+            }
+            set {
+                this["DebugHistory"] = value;
+            }
+        }
     }
 }

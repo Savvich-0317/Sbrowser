@@ -78,10 +78,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label4.Location = new System.Drawing.Point(6, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 78);
+            this.label4.Size = new System.Drawing.Size(189, 130);
             this.label4.TabIndex = 3;
-            this.label4.Text = "This software is using MIT license btw.\r\n\r\n\r\nNotify.wav by InfiniteLifespan \r\n ht" +
-    "tps://freesound.org/s/266455/ \r\n License: Creative Commons 0";
+            this.label4.Text = resources.GetString("label4.Text");
             // 
             // pictureBox1
             // 
@@ -155,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 271);
+            this.ClientSize = new System.Drawing.Size(434, 321);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);

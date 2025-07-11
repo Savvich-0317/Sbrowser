@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.WinForms;
 using Sbrowser.Properties;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Sbrowser
 {
@@ -20,6 +21,7 @@ namespace Sbrowser
             
             InitializeComponent();
             checkBox5.Checked = Settings.Default.UseWhiteText;
+            checkBox6.Checked = Settings.Default.DebugHistory;
 
             button3.BackColor = Settings.Default.MainColor;
             button4.BackColor = Settings.Default.SecondColor;
@@ -70,6 +72,8 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            Settings.Default.DebugHistory = checkBox6.Checked;
             Settings.Default.UseWhiteText = checkBox5.Checked;
             Settings.Default.MainColor = button3.BackColor;
             Settings.Default.SecondColor = button4.BackColor;
@@ -109,8 +113,8 @@ namespace Sbrowser
             }
             if (Settings.Default.CardSound)
             {
-                //SoundPlayer card = new SoundPlayer(@".\card.wav");
-                //card.Play();
+                SoundPlayer card = new SoundPlayer(@".\sounds\card.wav");
+                card.Play();
             }
             
         }
@@ -130,6 +134,11 @@ namespace Sbrowser
         {
             colorDialog1.ShowDialog();
             button4.BackColor = colorDialog1.Color;
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

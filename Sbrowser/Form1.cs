@@ -33,10 +33,11 @@ namespace Sbrowser
             
             System.Windows.Forms.Timer timer;
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1;
+            timer.Interval = 1500;
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
+
             Settings.Default.Focused = false;
             Settings.Default.Save();
             SendAdress(Settings.Default.homepage);
@@ -51,7 +52,7 @@ namespace Sbrowser
         {
             button9.Text = Settings.Default.Pomodoro;
             this.Opacity = Convert.ToDouble( Settings.Default.Opacity / 100.0);
-
+            listBox3.Visible = Settings.Default.DebugHistory;
 
             if (textBox1.Text.Contains("https://"))
             {
@@ -115,13 +116,7 @@ namespace Sbrowser
             }
 
 
-            if (PrevSource == "" || PrevSource == webView21.Source.ToString())
-            {
-                button2.Enabled = false;
-            }
-            else {
-                button2.Enabled = true;
-            }
+          
         }
 
         private void WebView21_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)

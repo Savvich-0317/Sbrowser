@@ -50,8 +50,8 @@ namespace Sbrowser
                 timer.Stop();
                 trackBar1.Enabled = true;
                 button1.Enabled = true;
-                //SoundPlayer notify = new SoundPlayer(@".\notify.wav");
-                //notify.Play();
+                SoundPlayer notify = new SoundPlayer(@".\sounds\notify.wav");
+                notify.Play();
                 Settings.Default.Focused = false;
                 
             }
@@ -102,8 +102,8 @@ namespace Sbrowser
             }
             if (Settings.Default.CardSound)
             {
-                //SoundPlayer card = new SoundPlayer(@".\card.wav");
-                //card.Play();
+                SoundPlayer card = new SoundPlayer(@".\sounds\card.wav");
+                card.Play();
             }
 
 
