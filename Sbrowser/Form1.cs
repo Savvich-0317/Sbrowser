@@ -37,7 +37,7 @@ namespace Sbrowser
             timer.Tick += CheckerCycle;
             timer.Start();
             InitializeComponent();
-
+            
             Settings.Default.Focused = false;
             Settings.Default.Save();
             SendAdress(Settings.Default.homepage);
@@ -46,6 +46,26 @@ namespace Sbrowser
 
         }
         Form4 Pomodoro = new Form4();
+
+        public async Task OpacityCloseAsync(Label label)
+        {
+            for (int i = -50; i < 30; i++)
+            {
+                await Task.Delay(1);
+                label.Location = new Point(label.Location.X,i);
+            }
+
+            await Task.Delay(1500);
+
+            for (int i = 30; i > -50; i--)
+            {
+                await Task.Delay(1);
+                label.Location = new Point(label.Location.X, i);
+
+
+            }
+
+        }
 
 
         private void CheckerCycle(object sender, EventArgs e)
@@ -540,7 +560,9 @@ namespace Sbrowser
             {
                 webView21.Dock = DockStyle.Fill;
                 webView21.BringToFront();
-
+                label4.Text = "Entered fullscreen\r\nPress f11 to exit.\r\n";
+                OpacityCloseAsync(label4);
+                label4.BringToFront();
 
             }
             else
@@ -549,6 +571,9 @@ namespace Sbrowser
                 webView21.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
                 webView21.Height = this.Height - 70;
                 webView21.Width = this.Width - 156;
+                label4.Text = "Exited fullscreen.\r\nPress f11 to enter.\r\n";
+                OpacityCloseAsync(label4);
+                label4.BringToFront();
                 listBox1.BringToFront();
                 listBox2.BringToFront();
 
