@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -41,31 +43,43 @@ namespace Sbrowser
             Settings.Default.Focused = false;
             Settings.Default.Save();
             SendAdress(Settings.Default.homepage);
-
+            ShowNotification("Welcome to\r\n" +
+                            "Sbrowser!\r\n", Color.Purple, 138,50);
+            
             UpdateList2();
 
         }
         Form4 Pomodoro = new Form4();
 
-        public async Task OpacityCloseAsync(Label label)
+        public async Task ShowNotification(string NotifyText,Color BackColor,int X,int Y)
         {
-            for (int i = -50; i < 30; i++)
+            System.Windows.Forms.Label NotifyLabel = new System.Windows.Forms.Label();
+            NotifyLabel.Text = NotifyText;
+            NotifyLabel.Size = new Size(186, Y);
+            NotifyLabel.BackColor = BackColor;
+            NotifyLabel.Font = new Font("Arial", 13);
+            NotifyLabel.Location = new Point(X, -Y);
+            
+            this.Controls.Add(NotifyLabel);
+            NotifyLabel.BringToFront();
+
+            for (int i = -Y; i < 30; i++)
             {
                 await Task.Delay(1);
-                label.Location = new Point(label.Location.X,i);
+                NotifyLabel.Location = new Point(NotifyLabel.Location.X, i);
             }
 
             await Task.Delay(1500);
 
-            for (int i = 30; i > -50; i--)
+            for (int i = 30; i > -Y; i--)
             {
                 await Task.Delay(1);
-                label.Location = new Point(label.Location.X, i);
-
-
+                NotifyLabel.Location = new Point(NotifyLabel.Location.X, i);
             }
-
+            NotifyLabel.Dispose();
         }
+
+
 
 
         private void CheckerCycle(object sender, EventArgs e)
@@ -560,19 +574,24 @@ namespace Sbrowser
             {
                 webView21.Dock = DockStyle.Fill;
                 webView21.BringToFront();
-                label4.Text = "Entered fullscreen\r\nPress f11 to exit.\r\n";
-                OpacityCloseAsync(label4);
+                //label4.Text = "Entered fullscreen\r\nPress f11 to exit.\r\n";
+                //OpacityCloseAsync(label4);
+                ShowNotification("Entered fullscreen!\r\n" +
+                            "Press f11 to exit.\r\n", Color.Purple, 138, 50);
                 label4.BringToFront();
 
             }
-            else
+            else if (e.KeyCode == Keys.F11 && webView21.Dock != DockStyle.None)
             {
                 webView21.Dock = DockStyle.None;
                 webView21.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
                 webView21.Height = this.Height - 70;
                 webView21.Width = this.Width - 156;
-                label4.Text = "Exited fullscreen.\r\nPress f11 to enter.\r\n";
-                OpacityCloseAsync(label4);
+                //label4.Text = "Exited fullscreen.\r\nPress f11 to enter.\r\n";
+                //OpacityCloseAsync(label4);
+                ShowNotification("Exited fullscreen!\r\n" +
+                            "Press f11 to enter.\r\n", Color.Purple, 138, 50);
+
                 label4.BringToFront();
                 listBox1.BringToFront();
                 listBox2.BringToFront();
