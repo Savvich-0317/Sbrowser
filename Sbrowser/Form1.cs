@@ -44,7 +44,7 @@ namespace Sbrowser
             Settings.Default.Save();
             SendAdress(Settings.Default.homepage);
             ShowNotification("Welcome to\r\n" +
-                            "Sbrowser!\r\n", Color.Purple, 138,50);
+                            "Sbrowser!\r\n", Color.Pink, 138,50);
             
             UpdateList2();
 
@@ -229,7 +229,11 @@ namespace Sbrowser
                 IsItBackChange = true;
                 SendAdress(listBox3.SelectedItem.ToString());
                 listBox1.SelectedItem = listBox3.SelectedItem;
-                
+
+            }
+            else
+            {
+                ShowNotification("Can't go backward!", Color.HotPink, 138, 25);
             }
 
         }
@@ -244,6 +248,10 @@ namespace Sbrowser
                 IsItBackChange = true;
                 SendAdress(listBox3.SelectedItem.ToString());
                 listBox1.SelectedItem = listBox3.SelectedItem;
+            }
+            else
+            {
+                ShowNotification("Can't go forward!", Color.HotPink, 138, 25);
             }
         }
 
@@ -340,12 +348,14 @@ namespace Sbrowser
                 pinned = true;
                 this.TopMost = true;
                 button7.Text = "📎";
+                ShowNotification("Window clipped!", Color.Pink, 138, 25);
             }
             else
             {
                 pinned = false;
                 this.TopMost = false;
                 button7.Text = "🧷";
+                ShowNotification("Window unclipped!", Color.Pink, 138, 25);
             }
             
         }
@@ -377,6 +387,7 @@ namespace Sbrowser
         private void button8_Click_1(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            ShowNotification("Cleared tabs!", Color.Pink, 138, 25);
         }
 
         private void listBox1_KeyDown(object sender, KeyEventArgs e)
@@ -577,7 +588,7 @@ namespace Sbrowser
                 //label4.Text = "Entered fullscreen\r\nPress f11 to exit.\r\n";
                 //OpacityCloseAsync(label4);
                 ShowNotification("Entered fullscreen!\r\n" +
-                            "Press f11 to exit.\r\n", Color.Purple, 138, 50);
+                            "Press f11 to exit.\r\n", Color.Pink, 138, 50);
                 label4.BringToFront();
 
             }
@@ -590,7 +601,7 @@ namespace Sbrowser
                 //label4.Text = "Exited fullscreen.\r\nPress f11 to enter.\r\n";
                 //OpacityCloseAsync(label4);
                 ShowNotification("Exited fullscreen!\r\n" +
-                            "Press f11 to enter.\r\n", Color.Purple, 138, 50);
+                            "Press f11 to enter.\r\n", Color.Pink, 138, 50);
 
                 label4.BringToFront();
                 listBox1.BringToFront();

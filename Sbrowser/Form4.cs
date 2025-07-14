@@ -22,7 +22,7 @@ namespace Sbrowser
         public Form4()
         {
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 6000;
+            timer.Interval = 60000;
             timer.Tick += CheckerCycle;
             InitializeComponent();
             label3.Text = trackBar1.Value.ToString();
