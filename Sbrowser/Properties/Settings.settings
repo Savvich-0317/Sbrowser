@@ -60,5 +60,11 @@
     <Setting Name="DebugHistory" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="NotificationColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 192, 192</Value>
+    </Setting>
+    <Setting Name="ErrorNotificationColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Red</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

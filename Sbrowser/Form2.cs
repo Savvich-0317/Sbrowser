@@ -20,6 +20,9 @@ namespace Sbrowser
         {
             
             InitializeComponent();
+
+            button6.BackColor = Settings.Default.NotificationColor;
+            button5.BackColor = Settings.Default.ErrorNotificationColor;
             checkBox5.Checked = Settings.Default.UseWhiteText;
             checkBox6.Checked = Settings.Default.DebugHistory;
 
@@ -72,7 +75,8 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Settings.Default.NotificationColor = button6.BackColor;
+            Settings.Default.ErrorNotificationColor = button5.BackColor;
             Settings.Default.DebugHistory = checkBox6.Checked;
             Settings.Default.UseWhiteText = checkBox5.Checked;
             Settings.Default.MainColor = button3.BackColor;

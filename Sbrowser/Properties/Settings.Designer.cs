@@ -218,5 +218,29 @@ namespace Sbrowser.Properties {
                 this["DebugHistory"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 192, 192")]
+        public global::System.Drawing.Color NotificationColor {
+            get {
+                return ((global::System.Drawing.Color)(this["NotificationColor"]));
+            }
+            set {
+                this["NotificationColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color ErrorNotificationColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ErrorNotificationColor"]));
+            }
+            set {
+                this["ErrorNotificationColor"] = value;
+            }
+        }
     }
 }

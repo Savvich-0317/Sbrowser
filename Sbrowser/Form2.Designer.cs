@@ -51,6 +51,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(209, 487);
+            this.button1.Location = new System.Drawing.Point(209, 528);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -132,7 +134,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(10, 236);
+            this.button2.Location = new System.Drawing.Point(166, 268);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 20);
             this.button2.TabIndex = 7;
@@ -144,7 +146,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.checkBox1.Location = new System.Drawing.Point(9, 213);
+            this.checkBox1.Location = new System.Drawing.Point(10, 214);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(99, 17);
             this.checkBox1.TabIndex = 9;
@@ -229,7 +231,7 @@
             this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 301);
+            this.groupBox1.Location = new System.Drawing.Point(12, 333);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(272, 105);
             this.groupBox1.TabIndex = 17;
@@ -259,7 +261,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.checkBox4);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.checkBox3);
@@ -274,7 +278,7 @@
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Location = new System.Drawing.Point(7, 33);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(277, 262);
+            this.groupBox2.Size = new System.Drawing.Size(277, 294);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Main settings";
@@ -282,7 +286,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.checkBox6);
-            this.groupBox3.Location = new System.Drawing.Point(17, 433);
+            this.groupBox3.Location = new System.Drawing.Point(17, 465);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(267, 48);
             this.groupBox3.TabIndex = 19;
@@ -300,11 +304,29 @@
             this.checkBox6.Text = "Show debug history";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(10, 239);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(163, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Change error notification color";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(10, 265);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(139, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Change notification color";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 522);
+            this.ClientSize = new System.Drawing.Size(299, 563);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
@@ -353,5 +375,7 @@
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
