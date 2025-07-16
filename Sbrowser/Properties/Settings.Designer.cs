@@ -242,5 +242,17 @@ namespace Sbrowser.Properties {
                 this["ErrorNotificationColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseAdvancedHotkeys {
+            get {
+                return ((bool)(this["UseAdvancedHotkeys"]));
+            }
+            set {
+                this["UseAdvancedHotkeys"] = value;
+            }
+        }
     }
 }

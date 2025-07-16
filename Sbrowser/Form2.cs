@@ -20,6 +20,7 @@ namespace Sbrowser
         {
             
             InitializeComponent();
+            checkBox7.Checked = Settings.Default.UseAdvancedHotkeys;
 
             button6.BackColor = Settings.Default.NotificationColor;
             button5.BackColor = Settings.Default.ErrorNotificationColor;
@@ -75,6 +76,7 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Settings.Default.UseAdvancedHotkeys = checkBox7.Checked;
             Settings.Default.NotificationColor = button6.BackColor;
             Settings.Default.ErrorNotificationColor = button5.BackColor;
             Settings.Default.DebugHistory = checkBox6.Checked;
@@ -143,6 +145,17 @@ namespace Sbrowser
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form hotkeys = new Form5();
+            hotkeys.Show();
         }
     }
 }

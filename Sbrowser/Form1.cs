@@ -581,6 +581,25 @@ namespace Sbrowser
 
         private void webView21_KeyDown(object sender, KeyEventArgs e)
         {
+            if (Settings.Default.UseAdvancedHotkeys && e.Modifiers == Keys.Control)
+            {
+                switch (e.KeyCode) {
+                    case Keys.S:
+                        button2.PerformClick();
+                        break;
+
+                    case Keys.D:
+                        button10.PerformClick();
+                        break;
+
+                    case Keys.H:
+                        button4.PerformClick();
+                        break;  
+                }
+            }
+
+
+
             if (e.KeyCode == Keys.F11 && webView21.Dock == DockStyle.None)
             {
                 webView21.Dock = DockStyle.Fill;

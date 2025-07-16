@@ -49,10 +49,12 @@
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -134,7 +136,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(166, 268);
+            this.button2.Location = new System.Drawing.Point(171, 289);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 20);
             this.button2.TabIndex = 7;
@@ -146,7 +148,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.checkBox1.Location = new System.Drawing.Point(10, 214);
+            this.checkBox1.Location = new System.Drawing.Point(10, 235);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(99, 17);
             this.checkBox1.TabIndex = 9;
@@ -231,7 +233,7 @@
             this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 333);
+            this.groupBox1.Location = new System.Drawing.Point(12, 354);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(272, 105);
             this.groupBox1.TabIndex = 17;
@@ -261,6 +263,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.checkBox7);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.button6);
@@ -278,10 +282,28 @@
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Location = new System.Drawing.Point(7, 33);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(277, 294);
+            this.groupBox2.Size = new System.Drawing.Size(277, 315);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Main settings";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(10, 265);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(163, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Change error notification color";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(10, 291);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(139, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Change notification color";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -304,23 +326,27 @@
             this.checkBox6.Text = "Show debug history";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // checkBox7
             // 
-            this.button5.Location = new System.Drawing.Point(10, 239);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(163, 23);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Change error notification color";
-            this.button5.UseVisualStyleBackColor = true;
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(10, 213);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(136, 17);
+            this.checkBox7.TabIndex = 21;
+            this.checkBox7.Text = "Use advanced hotkeys";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
-            // button6
+            // button7
             // 
-            this.button6.Location = new System.Drawing.Point(10, 265);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(139, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Change notification color";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(148, 208);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(73, 24);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Hotkeys?";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Form2
             // 
@@ -377,5 +403,7 @@
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.CheckBox checkBox7;
     }
 }
