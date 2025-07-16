@@ -48,16 +48,16 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label2.Location = new System.Drawing.Point(1, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 85);
+            this.label2.Size = new System.Drawing.Size(168, 68);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ctrl + a : backward page\r\nCtrl + d : forward page\r\nCtrl + r : reload page\r\nCtrl +" +
-    " d : forward page\r\nCtrl + h : go to homepage";
+    " h : go to homepage";
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 147);
+            this.ClientSize = new System.Drawing.Size(246, 130);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form5";
