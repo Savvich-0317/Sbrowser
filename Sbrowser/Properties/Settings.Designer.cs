@@ -254,5 +254,17 @@ namespace Sbrowser.Properties {
                 this["UseAdvancedHotkeys"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DisableJavascript {
+            get {
+                return ((bool)(this["DisableJavascript"]));
+            }
+            set {
+                this["DisableJavascript"] = value;
+            }
+        }
     }
 }

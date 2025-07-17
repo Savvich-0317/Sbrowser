@@ -49,16 +49,19 @@
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -71,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(209, 528);
+            this.button1.Location = new System.Drawing.Point(485, 361);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -136,7 +139,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(171, 289);
+            this.button2.Location = new System.Drawing.Point(171, 272);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 20);
             this.button2.TabIndex = 7;
@@ -233,7 +236,7 @@
             this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 354);
+            this.groupBox1.Location = new System.Drawing.Point(290, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(272, 105);
             this.groupBox1.TabIndex = 17;
@@ -263,11 +266,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox8);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.checkBox4);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.checkBox3);
@@ -282,14 +284,36 @@
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Location = new System.Drawing.Point(7, 33);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(277, 315);
+            this.groupBox2.Size = new System.Drawing.Size(277, 297);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Main settings";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(148, 208);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(73, 24);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Hotkeys?";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(10, 213);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(136, 17);
+            this.checkBox7.TabIndex = 21;
+            this.checkBox7.Text = "Use advanced hotkeys";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(10, 265);
+            this.button5.Location = new System.Drawing.Point(7, 58);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(163, 23);
             this.button5.TabIndex = 20;
@@ -298,7 +322,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(10, 291);
+            this.button6.Location = new System.Drawing.Point(7, 22);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(139, 23);
             this.button6.TabIndex = 19;
@@ -308,9 +332,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.checkBox6);
-            this.groupBox3.Location = new System.Drawing.Point(17, 465);
+            this.groupBox3.Location = new System.Drawing.Point(7, 336);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(267, 48);
+            this.groupBox3.Size = new System.Drawing.Size(277, 48);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Debug settings";
@@ -326,33 +350,34 @@
             this.checkBox6.Text = "Show debug history";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // checkBox8
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(10, 213);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(136, 17);
-            this.checkBox7.TabIndex = 21;
-            this.checkBox7.Text = "Use advanced hotkeys";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.BackColor = System.Drawing.Color.Yellow;
+            this.checkBox8.Location = new System.Drawing.Point(10, 258);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(109, 17);
+            this.checkBox8.TabIndex = 23;
+            this.checkBox8.Text = "Disable javascript";
+            this.checkBox8.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // groupBox4
             // 
-            this.button7.Location = new System.Drawing.Point(148, 208);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(73, 24);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Hotkeys?";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Location = new System.Drawing.Point(290, 142);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(272, 100);
+            this.groupBox4.TabIndex = 20;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Notification Settings";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 563);
+            this.ClientSize = new System.Drawing.Size(572, 390);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
@@ -372,6 +397,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +431,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

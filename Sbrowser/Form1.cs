@@ -47,6 +47,7 @@ namespace Sbrowser
                             "Sbrowser!\r\n", Color.Pink, 138,50);
             
             UpdateList2();
+            
 
         }
         Form4 Pomodoro = new Form4();
@@ -84,6 +85,9 @@ namespace Sbrowser
 
         private void CheckerCycle(object sender, EventArgs e)
         {
+            
+            webView21.CoreWebView2.Settings.IsScriptEnabled = !Settings.Default.DisableJavascript;
+
             button9.Text = Settings.Default.Pomodoro;
             this.Opacity = Convert.ToDouble( Settings.Default.Opacity / 100.0);
             listBox3.Visible = Settings.Default.DebugHistory;
@@ -221,6 +225,7 @@ namespace Sbrowser
         int CanDoForward = 0;
         private void button2_Click(object sender, EventArgs e)
         {
+            webView21.CoreWebView2.Settings.IsScriptEnabled = false;
             if (listBox3.Items.Count - HistoryCursorShift - 2 >= 0)
             {
                 HistoryCursorShift += 1;
@@ -628,6 +633,11 @@ namespace Sbrowser
 
 
             }
+        }
+
+        private void webView21_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

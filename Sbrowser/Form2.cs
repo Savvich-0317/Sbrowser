@@ -20,6 +20,8 @@ namespace Sbrowser
         {
             
             InitializeComponent();
+            checkBox8.Checked = Settings.Default.DisableJavascript;
+
             checkBox7.Checked = Settings.Default.UseAdvancedHotkeys;
 
             button6.BackColor = Settings.Default.NotificationColor;
@@ -76,6 +78,14 @@ namespace Sbrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBox8.Checked == true)
+            {
+                MessageBox.Show("Javascript is disabled! \r\n" +
+                    "This will cause problems with dynamic pages!\n\r \r\n" +
+                    "Settings is saved.");
+            }
+
+            Settings.Default.DisableJavascript = checkBox8.Checked;
             Settings.Default.UseAdvancedHotkeys = checkBox7.Checked;
             Settings.Default.NotificationColor = button6.BackColor;
             Settings.Default.ErrorNotificationColor = button5.BackColor;
