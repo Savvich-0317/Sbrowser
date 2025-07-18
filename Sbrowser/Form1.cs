@@ -639,6 +639,18 @@ namespace Sbrowser
         {
             
         }
+        // btw, from the internet, but this fixes a fundamental problem with my page processing, so that's very good.
+        // So thats means after that commit the browser is finally in useful position. Wow.
+        
+        private void webView21_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+        {
+            webView21.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
+        }
+
+        private void CoreWebView2_NewWindowRequested(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs e)
+        {
+            e.NewWindow = webView21.CoreWebView2;
+        }
     }
 }
     
