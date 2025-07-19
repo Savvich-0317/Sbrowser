@@ -69,8 +69,8 @@
             // 
             // webView21
             // 
-            this.webView21.AllowExternalDrop = true;
             resources.ApplyResources(this.webView21, "webView21");
+            this.webView21.AllowExternalDrop = true;
             this.webView21.BackColor = System.Drawing.Color.Gray;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
@@ -88,9 +88,9 @@
             // 
             // button2
             // 
+            resources.ApplyResources(this.button2, "button2");
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -214,9 +214,9 @@
             // 
             // button10
             // 
+            resources.ApplyResources(this.button10, "button10");
             this.button10.BackColor = System.Drawing.Color.White;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button10, "button10");
             this.button10.Name = "button10";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
